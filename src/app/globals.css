@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Rajdhani:wght@400;500&display=swap");
+
+:root {
+  /* Brand Colors */
+  --color-primary: #543cda;
+  --color-secondary: #005af0;
+  --color-accent: #00d073;
+  --color-dark: #101115;
+  --color-dark-alt: #101116;
+  --color-muted: #656f81;
+  --color-surface: #f8f8f8;
+  --color-deep-purple: #4937d0;
+
+  /* Typography */
+  --font-heading: 'Kanit', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+
+  /* Default Theme (Light) */
+  --background: #ffffff;
+  --foreground: #101115;
+  --text-muted: #656f81;
+  --surface: #f8f8f8;
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --text-muted: #999;
+    --surface: #1a1a1a;
+  }
+} */
+
+/* Tailwind font fallback */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+   @apply bg-gradient-to-br from-[#f6f4ff] to-[#ffffff];
+}
+
+.font-kanit {
+  font-family: var(--font-heading);
+}
+
+.font-rajdhani {
+  font-family: var(--font-body);
+}
+
