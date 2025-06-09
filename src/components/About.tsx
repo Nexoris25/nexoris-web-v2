@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import { HiCheckCircle } from 'react-icons/hi';
 
@@ -87,15 +88,18 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <a
-            href="/get-a-quote"
-            className="inline-block bg-[var(--color-primary)] text-white hover:bg-[var(--color-secondary)] transition-colors duration-200 font-medium px-8 py-4 rounded-full"
-            aria-label="Jump to contact form to get in touch with Nexoris"
-          >
-            Let&apos;s Build What’s Next Together →
-          </a>
-        </div>
+        import Link from 'next/link';
+
+<div className="mt-16 text-center">
+  <Link
+    href="/get-a-quote"
+    className="inline-block bg-[var(--color-primary)] text-white hover:bg-[var(--color-secondary)] transition-colors duration-200 font-medium px-6 py-4 rounded-full text-sm md:text-base"
+    aria-label="Jump to contact form to get in touch with Nexoris"
+  >
+    Let&apos;s Build What&apos;s Next Together →
+  </Link>
+</div>
+
       </div>
     </section>
   );
