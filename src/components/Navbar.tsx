@@ -5,43 +5,45 @@ import { useState } from 'react';
 import { HiOutlineMenu, HiX } from 'react-icons/hi';
 import Image from 'next/image';
 
+const navItems = ['about', 'services', 'testimonials', 'contact'];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav
-      className="sticky top-0 z-50 lg:py-2 rounded-3xl w-full bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
       role="navigation"
       aria-label="Primary"
+      className="sticky top-0 z-50 rounded-b-3xl w-full h-20 bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 flex items-center justify-between py-4">
+      <div className="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-20 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center text-[var(--color-primary)] font-kanit text-2xl sm:text-3xl tracking-tight"
           aria-label="Nexoris Home"
+          className="flex items-center h-full text-[var(--color-primary)] font-kanit text-2xl sm:text-3xl tracking-tight"
         >
           <Image
             src="/navbar-logo.webp"
             alt="Nexoris Technologies Logo"
             width={125}
             height={85}
-            className="h-full w-full"
+            className="object-contain h-12 w-auto"
             priority
           />
         </Link>
 
-        {/* Mobile Get a Quote Button */}
+        {/* Mobile CTA */}
         <Link
           href="/get-a-quote"
-          className="block md:hidden bg-[#543cda] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
+          className="block md:hidden order-2 bg-[var(--color-primary)] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
         >
           Get a Quote
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-base">
-          <ul className="flex gap-6" role="list">
+          <ul className="flex gap-6 items-center" role="list">
             <li>
               <Link
                 href="/"
@@ -50,7 +52,7 @@ export default function Navbar() {
                 Home
               </Link>
             </li>
-            {['about', 'services', 'testimonials', 'contact'].map((item) => (
+            {navItems.map((item) => (
               <li key={item}>
                 <Link
                   href={`#${item}`}
@@ -61,9 +63,10 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
           <Link
             href="/get-a-quote"
-            className="ml-4 bg-[#543cda] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
+            className="ml-4 bg-[var(--color-primary)] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
           >
             Get a Quote
           </Link>
@@ -71,22 +74,22 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          className="md:hidden order-3 text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]"
         >
           {isOpen ? <HiX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Navigation */}
+      {/* Mobile Menu Items */}
       {isOpen && (
         <ul
           className="md:hidden w-full bg-[var(--surface)] border-t border-[#eaeaea] px-6 pb-6 pt-4 text-sm font-medium text-[var(--foreground)] space-y-3"
           role="list"
           aria-label="Mobile Menu"
         >
-          {['about', 'services', 'testimonials', 'contact'].map((item) => (
+          {navItems.map((item) => (
             <li key={item}>
               <Link
                 href={`#${item}`}
