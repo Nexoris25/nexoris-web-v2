@@ -31,6 +31,14 @@ export default function Navbar() {
           />
         </Link>
 
+        {/* Mobile Get a Quote Button */}
+        <Link
+          href="/get-a-quote"
+          className="block md:hidden bg-[var(--color-primary)] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
+        >
+          Get a Quote
+        </Link>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-base">
           <ul className="flex gap-6" role="list">
@@ -89,15 +97,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="/get-a-quote"
-              className="inline-block mt-3 w-full bg-[var(--color-primary)] text-white text-center py-2 rounded-lg hover:bg-[var(--color-secondary)] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Get a Quote
-            </Link>
-          </li>
         </ul>
       )}
     </nav>
