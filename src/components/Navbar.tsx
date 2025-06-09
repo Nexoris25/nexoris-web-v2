@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* Mobile Get a Quote Button */}
         <Link
           href="/get-a-quote"
-          className="block md:hidden bg-[var(--color-primary)] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
+          className="block md:hidden bg-[#543cda] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
         >
           Get a Quote
         </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/get-a-quote"
-            className="ml-4 bg-[var(--color-primary)] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
+            className="ml-4 bg-[#543cda] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--color-secondary)] transition"
           >
             Get a Quote
           </Link>
