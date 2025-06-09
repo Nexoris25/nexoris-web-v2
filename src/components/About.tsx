@@ -88,8 +88,6 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        import Link from 'next/link';
-
 <div className="mt-16 text-center">
   <Link
     href="/get-a-quote"
