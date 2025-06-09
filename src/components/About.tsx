@@ -89,7 +89,7 @@ export default function About() {
         {/* CTA */}
         <div className="mt-16 text-center">
           <a
-            href="#contact"
+            href="/get-a-quote"
             className="inline-block bg-[var(--color-primary)] text-white hover:bg-[var(--color-secondary)] transition-colors duration-200 font-medium px-8 py-4 rounded-full"
             aria-label="Jump to contact form to get in touch with Nexoris"
           >

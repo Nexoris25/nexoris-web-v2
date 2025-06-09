@@ -9,13 +9,13 @@ import FaqsSection from '@/components/FAQs';
 import Script from 'next/script';
 import { Metadata } from 'next';
 import { generateNexorisStructuredData } from '@/lib/schema/generateSchema';
-import { faqs } from '@/data/faqs'; // ✅ Corrected path
+import { faqs } from '@/data/faqs'; 
 
 export const metadata: Metadata = {
   title: 'Nexoris Technologies – Building the Future of Digital Products',
   description:
     'Nexoris delivers scalable, secure, and performance-driven tech solutions—from custom software to cloud migration. Build with us.',
-  metadataBase: new URL('https://nexoristech.com'),
+  metadataBase: new URL('https://www.nexoristech.com'),
   alternates: {
     canonical: '/',
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Nexoris Technologies – Building the Future of Digital Products',
     description:
       'Nexoris delivers scalable, secure, and performance-driven tech solutions—from custom software to cloud migration.',
-    url: 'https://nexoristech.com',
+    url: 'https:/www.nexoristech.com',
     siteName: 'Nexoris Technologies',
     type: 'website',
     locale: 'en_US',
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ Generate JSON-LD structured data
+// Generate JSON-LD structured data
 const schema = generateNexorisStructuredData({
   pageTitle: metadata.title as string,
   pageDescription: metadata.description as string,
-  pageUrl: 'https://nexoristech.com',
-  faqs, // ✅ Injected for FAQPage schema
+  pageUrl: 'https://www.nexoristech.com',
+  faqs, // Injected for FAQPage schema
 });
 
 export default function Home() {
   return (
     <main>
-      {/* ✅ Inject structured data via Next.js best practice */}
+      {/* Inject structured data via Next.js best practice */}
       <Script
         id="structured-data"
         type="application/ld+json"

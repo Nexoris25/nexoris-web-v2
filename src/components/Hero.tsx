@@ -28,7 +28,7 @@ export default function Hero() {
             You&apos;ve been sketching, pitching, overthinking. Maybe even burned by slow devs or unstable builds. At Nexoris, we don&apos;t just launch MVPs — we build fast, scalable products that are easy to grow, easy to love, and ready for whatever&apos;s next.
           </p>
           <Link
-            href="#contact"
+            href="/get-a-quote"
             aria-label="Start your Nexoris project — jump to contact form"
             className="inline-block font-medium font-rajdhani px-6 py-3 rounded-full shadow 
                        bg-[var(--color-primary)] text-white 

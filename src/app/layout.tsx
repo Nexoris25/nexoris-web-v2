@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Kanit, Rajdhani } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import AnalyticsProvider from "@/components/AnalyticsProvider"; // 🆕 Add this (see code below)
 
 // Import Kanit for headings
 const kanit = Kanit({
@@ -25,7 +27,7 @@ const rajdhani = Rajdhani({
 export const metadata: Metadata = {
   title: "Nexoris Technologies – Engineering Scalable Digital Solutions",
   description: "Custom web, mobile, and cloud software development tailored to your business by Nexoris Technologies.",
-   icons: {
+  icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
@@ -54,8 +56,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`light ${kanit.variable} ${rajdhani.variable}`}>
+      <head>
+        {/* GA4: Load the global site tag */}
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-Y1ZM9PF3N3"
+  strategy="afterInteractive"
+/>
+<Script id="ga4-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y1ZM9PF3N3', {
+      page_path: window.location.pathname,
+    });
+  `}
+</Script>
+
+      </head>
       <body className="font-rajdhani antialiased bg-white text-[#101115]">
         <Navbar />
+        <AnalyticsProvider /> {/* 🆕 Tracks client-side page views */}
         {children}
         <Footer />
         <WhatsAppButton />
