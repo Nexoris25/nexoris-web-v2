@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import AnalyticsProvider from "@/components/AnalyticsProvider"; // 🆕 Add this (see code below)
+import AnalyticsProvider from "@/components/AnalyticsProvider"; 
 
 // Import Kanit for headings
 const kanit = Kanit({

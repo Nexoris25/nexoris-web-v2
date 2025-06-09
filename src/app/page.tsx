@@ -12,9 +12,9 @@ import { generateNexorisStructuredData } from '@/lib/schema/generateSchema';
 import { faqs } from '@/data/faqs'; 
 
 export const metadata: Metadata = {
-  title: 'Nexoris Technologies – Building the Future of Digital Products',
+  title: 'Nexoris Technologies – Digital Product & Growth Experts',
   description:
-    'Nexoris delivers scalable, secure, and performance-driven tech solutions—from custom software to cloud migration. Build with us.',
+    'Nexoris designs and builds secure, scalable digital products across web, mobile, and cloud that help businesses grow with clarity, speed, and lasting impact.',
   metadataBase: new URL('https://www.nexoristech.com'),
   alternates: {
     canonical: '/',
