@@ -12,7 +12,7 @@ export default function About() {
       aria-labelledby="about-heading"
       className="bg-[var(--purple-6)] text-[var(--foreground)] py-10 lg:py-16 px-6 sm:px-10 lg:px-20 font-rajdhani"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <header className="text-center lg:text-left mb-16">
           <h2
             id="about-heading"

@@ -14,7 +14,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-dark)] text-white py-10 px-6 sm:px-10 lg:px-20 mt-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         {/* Logo + About */}
         <div>
           <Link href="/" aria-label="Nexoris Home">

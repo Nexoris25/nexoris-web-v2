@@ -13,7 +13,7 @@ export default function Hero() {
       className="w-full py-10 lg:pt-24 px-6 sm:px-10 lg:px-20 
                  bg-gradient-to-br from-[#f6f4ff] to-white text-[var(--primary-gray)]"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* TEXT SIDE */}
         <header className="text-center lg:text-left">
           <h1

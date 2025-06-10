@@ -62,7 +62,7 @@ export default function Contact() {
       aria-labelledby="contact-heading"
       className="py-10 lg:py-16 px-6 sm:px-10 lg:px-20 bg-gradient-to-br from-[#f6f4ff] to-white"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-12 text-center">
           <h2
             id="contact-heading"

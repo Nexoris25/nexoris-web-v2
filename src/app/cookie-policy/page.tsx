@@ -17,12 +17,30 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title,
-    description,
-    url: pageUrl,
-    type: 'website',
-    siteName: 'Nexoris Technologies',
-  },
+  title: 'Nexoris Technologies – Building the Future of Digital Products',
+  description:
+    'Nexoris delivers scalable, secure, and performance-driven tech solutions - from custom software to cloud migration.',
+  url: 'https://www.nexoristech.com/cookie-policy',
+  siteName: 'Nexoris Technologies',
+  type: 'website',
+  locale: 'en_US',
+  images: [
+    {
+      url: 'https://www.nexoristech.com/navbar-logo-webp',
+      width: 1200,
+      height: 630,
+      alt: 'Nexoris Technologies – Custom Software & Digital Solutions',
+    },
+  ],
+},
+twitter: {
+  card: 'summary_large_image',
+  title: 'Nexoris Technologies',
+  description:
+    'Build with confidence. Nexoris crafts modern digital products with performance, scale, and security in mind.',
+  creator: '@nexoristech',
+  images: ['https://www.nexoristech.com/navbar-logo.webp'],
+},
 };
 
 function Breadcrumbs() {
@@ -47,7 +65,7 @@ function Breadcrumbs() {
 export default function CookiePolicyPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-6 sm:px-10 lg:px-20 py-20 font-rajdhani">
-      <article className="max-w-4xl mx-auto">
+      <article className="container mx-auto">
         <Breadcrumbs />
 
         <header className="mb-10">

@@ -14,9 +14,9 @@ export default function Navbar() {
     <nav
       role="navigation"
       aria-label="Primary"
-      className="sticky top-0 z-50 h-16 lg:h-20 rounded-b-3xl w-full bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
+      className="sticky top-0 z-50 h-16 px-4 sm:px-6 lg:px-20 lg:h-20 rounded-b-3xl w-full bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
     >
-      <div className="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-20 flex items-center justify-between">
+      <div className="h-full container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"

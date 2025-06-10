@@ -67,7 +67,7 @@ export default function OurProcess() {
       aria-labelledby="process-heading"
       className="py-10 px-6 sm:px-10 lg:px-20 bg-gradient-to-br from-[#f6f4ff] to-[#ffffff] text-[var(--foreground)]"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <header className="text-center mb-16">
           <h2
             id="process-heading"

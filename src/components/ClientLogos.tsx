@@ -23,7 +23,7 @@ export default function ClientLogosCarousel() {
       aria-label="Our Clients"
       className="w-full overflow-hidden py-10 bg-gradient-to-br from-[#f6f4ff] to-[#ffffff]"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-20">
         <h2 className="text-center text-xl md:text-2xl font-kanit font-semibold text-[var(--color-primary)] mb-6">
           Trusted by forward-thinking teams
         </h2>

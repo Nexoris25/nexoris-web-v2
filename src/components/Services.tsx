@@ -79,7 +79,7 @@ export default function Services() {
       aria-labelledby="services-heading"
       className="bg-gradient-to-br from-[#f6f4ff] to-[#ffffff] py-10 lg:py-16 px-6 sm:px-10 lg:px-20"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <header className="text-center mb-14">
           <h2
             id="services-heading"

@@ -32,21 +32,30 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Nexoris Technologies – Building the Future of Digital Products',
-    description:
-      'Nexoris delivers scalable, secure, and performance-driven tech solutions—from custom software to cloud migration.',
-    url: 'https:/www.nexoristech.com',
-    siteName: 'Nexoris Technologies',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nexoris Technologies',
-    description:
-      'Build with confidence. Nexoris crafts modern digital products with performance, scale, and security in mind.',
-    creator: '@nexoristech',
-  },
+  title: 'Nexoris Technologies – Building the Future of Digital Products',
+  description:
+    'Nexoris delivers scalable, secure, and performance-driven tech solutions — from custom software to cloud migration.',
+  url: 'https://www.nexoristech.com',
+  siteName: 'Nexoris Technologies',
+  type: 'website',
+  locale: 'en_US',
+  images: [
+    {
+      url: 'https://www.nexoristech.com/navbar-logo-webp',
+      width: 1200,
+      height: 630,
+      alt: 'Nexoris Technologies – Custom Software & Digital Solutions',
+    },
+  ],
+},
+twitter: {
+  card: 'summary_large_image',
+  title: 'Nexoris Technologies',
+  description:
+    'Build with confidence. Nexoris crafts modern digital products with performance, scale, and security in mind.',
+  creator: '@nexoristech',
+  images: ['https://www.nexoristech.com/navbar-logo.webp'],
+},
 };
 
 // Generate JSON-LD structured data
