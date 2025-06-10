@@ -26,8 +26,8 @@ export default function Navbar() {
           <Image
             src="/navbar-logo.webp"
             alt="Nexoris Technologies Logo"
-            width={110}
-            height={70}
+            width={125}
+            height={85}
             className="object-contain lg:h-12 w-auto"
             priority
           />
