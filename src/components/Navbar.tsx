@@ -14,7 +14,7 @@ export default function Navbar() {
     <nav
       role="navigation"
       aria-label="Primary"
-      className="sticky top-0 z-50 rounded-b-3xl w-full h-20 bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
+      className="sticky top-0 z-50 h-16 lg:h-20 rounded-b-3xl w-full bg-[var(--surface)] border-b border-[#e2e2e7] shadow-sm backdrop-blur-md transition-all font-rajdhani"
     >
       <div className="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-20 flex items-center justify-between">
         {/* Logo */}
@@ -26,9 +26,9 @@ export default function Navbar() {
           <Image
             src="/navbar-logo.webp"
             alt="Nexoris Technologies Logo"
-            width={125}
-            height={85}
-            className="object-contain h-12 w-auto"
+            width={110}
+            height={70}
+            className="object-contain lg:h-12 w-auto"
             priority
           />
         </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           className="md:hidden order-3 text-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]"
         >
-          {isOpen ? <HiX className="w-6 h-6" /> : <HiOutlineMenu className="w-6 h-6" />}
+          {isOpen ? <HiX className="w-8 h-8" /> : <HiOutlineMenu className="w-8 h-8" />}
         </button>
       </div>
 
