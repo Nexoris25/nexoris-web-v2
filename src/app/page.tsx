@@ -11,6 +11,9 @@ import { Metadata } from 'next';
 import { generateNexorisStructuredData } from '@/lib/schema/generateSchema';
 import { faqs } from '@/data/faqs'; 
 
+export const dynamic = 'force-dynamic';
+
+
 export const metadata: Metadata = {
   title: 'Nexoris Technologies – Digital Product & Growth Experts',
   description:

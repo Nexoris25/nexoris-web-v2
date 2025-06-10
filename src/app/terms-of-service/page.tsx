@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 const title = 'Terms of Service – Nexoris Technologies';
 const description =
   'These Terms of Service govern your access to and use of Nexoris Technologies Ltd platforms, digital services, and client engagements.';

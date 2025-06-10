@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
+
 const title = 'Cookie Policy – Nexoris Technologies';
 const description =
   'This Cookie Policy explains how Nexoris Technologies Ltd uses cookies and similar tracking technologies across our website and platforms.';
