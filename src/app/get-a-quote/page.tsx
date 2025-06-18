@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generateNexorisStructuredData } from '@/lib/schema/generateSchema';
 import GetAQuoteClient from './GetAQuoteClient';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'auto';
 
 
 // Separate constants to ensure proper string typing
