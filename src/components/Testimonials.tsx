@@ -50,10 +50,7 @@ const testimonials = [
 
 function TestimonialCard({ quote, name, role, image }: (typeof testimonials)[0]) {
   return (
-    <div
-      className="w-full h-[12rem] bg-white rounded-2xl border cursor-pointer border-[var(--color-accent)] p-6 flex flex-col justify-between shadow-md
-      transition-all duration-300 ease-in-out hover:shadow-[0_6px_16px_rgba(84,60,218,0.12)] hover:scale-[1.02]"
-    >
+    <div className="w-full h-[12rem] bg-white rounded-2xl border cursor-pointer border-[var(--color-accent)] p-6 flex flex-col justify-between shadow-md transition-all duration-300 ease-in-out hover:shadow-[0_6px_16px_rgba(84,60,218,0.12)] hover:scale-[1.02]">
       <p className="text-[var(--color-dark-alt)] italic mb-6 font-rajdhani text-sm md:text-base leading-relaxed">
         “{quote}”
       </p>
@@ -82,8 +79,7 @@ export default function Testimonials() {
   const [swiperReady, setSwiperReady] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setSwiperReady(true), 0);
-    return () => clearTimeout(timer);
+    setSwiperReady(true); // Only after DOM is mounted
   }, []);
 
   return (
@@ -102,7 +98,7 @@ export default function Testimonials() {
           </h2>
         </header>
 
-        <div className="relative">
+        <div className="relative" suppressHydrationWarning>
           {swiperReady && (
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -114,9 +110,9 @@ export default function Testimonials() {
                 nextEl: nextRef.current!,
               }}
               onBeforeInit={(swiper) => {
-                // @ts-expect-error: swiper expects prevEl/nextEl to be HTMLElement, will be assigned post-render
+                // @ts-expect-error – ref elements are assigned post-render, safe to override here
                 swiper.params.navigation.prevEl = prevRef.current;
-                // @ts-expect-error: same reason as above
+                // @ts-expect-error – ref elements are assigned post-render, safe to override here
                 swiper.params.navigation.nextEl = nextRef.current;
               }}
               pagination={{

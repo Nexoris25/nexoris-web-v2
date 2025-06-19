@@ -7,12 +7,20 @@ export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setIsVisible(window.scrollY > 300);
+      }, 100); // debounce to 100ms
     };
 
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   const scrollToTop = () => {

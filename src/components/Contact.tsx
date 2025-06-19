@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const services = [
@@ -26,6 +26,11 @@ export default function Contact() {
   const [otherService, setOtherService] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -71,7 +76,8 @@ export default function Contact() {
             Get in Touch with Nexoris Technologies
           </h2>
           <p className="mt-4 text-[var(--color-dark-alt)] max-w-2xl mx-auto text-base">
-            Smart solutions start with the right conversation. Whether launching a new product or modernizing infrastructure, Nexoris delivers purpose-built solutions for long-term success.
+            Smart solutions start with the right conversation. Whether launching a new product or
+            modernizing infrastructure, Nexoris delivers purpose-built solutions for long-term success.
           </p>
         </div>
 
@@ -90,13 +96,13 @@ export default function Contact() {
           <input type="hidden" name="_template" value="box" />
 
           <div className="sm:col-span-2">
-            <label htmlFor="fullName" className="block text-base font-mediumtext-[var(--color-dark-alt)]">
+            <label htmlFor="fullName" className="block text-base font-medium text-[var(--color-dark-alt)]">
               Full Name
             </label>
             <input
               type="text"
               id="fullName"
-              name="Full Name"
+              name="fullName"
               required
               autoComplete="name"
               className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
@@ -104,13 +110,13 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-base font-mediumtext-[var(--color-dark-alt)]">
+            <label htmlFor="email" className="block text-base font-medium text-[var(--color-dark-alt)]">
               Email Address
             </label>
             <input
               type="email"
               id="email"
-              name="Email"
+              name="email"
               required
               autoComplete="email"
               className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
@@ -124,7 +130,7 @@ export default function Contact() {
             <input
               type="tel"
               id="phone"
-              name="Phone"
+              name="phone"
               required
               autoComplete="tel"
               className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
@@ -132,13 +138,13 @@ export default function Contact() {
           </div>
 
           <div className="sm:col-span-2">
-            <label htmlFor="subject" className="block text-base font-mediumtext-[var(--color-dark-alt)]">
+            <label htmlFor="subject" className="block text-base font-medium text-[var(--color-dark-alt)]">
               Subject
             </label>
             <input
               type="text"
               id="subject"
-              name="Subject"
+              name="subject"
               required
               className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             />
@@ -150,24 +156,22 @@ export default function Contact() {
             </label>
             <select
               id="service"
-              name="Service"
+              name="service"
               required
               className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] cursor-pointer"
               onChange={(e) => setOtherService(e.target.value === 'Other')}
             >
-              <option value="" className="text-base text-[var(--color-dark-alt)]">-- Select a service --</option>
+              <option value="">-- Select a service --</option>
               {services.map((service) => (
-                <option key={service} value={service} className="cursor-pointer text-base text-[var(--color-dark-alt)]">
+                <option key={service} value={service}>
                   {service}
                 </option>
               ))}
-              <option value="Other" className="cursor-pointer text-base text-[var(--color-dark-alt)]">
-                Other (not listed)
-              </option>
+              <option value="Other">Other (not listed)</option>
             </select>
           </div>
 
-          {otherService && (
+          {hasMounted && otherService && (
             <div className="sm:col-span-2">
               <label htmlFor="customService" className="block text-base font-medium text-[var(--color-dark-alt)]">
                 Please describe your needs
@@ -175,7 +179,7 @@ export default function Contact() {
               <input
                 type="text"
                 id="customService"
-                name="Custom Service"
+                name="customService"
                 required
                 className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               />
@@ -188,7 +192,7 @@ export default function Contact() {
             </label>
             <textarea
               id="message"
-              name="Message"
+              name="message"
               required
               rows={5}
               placeholder="Tell us about your project or challenge..."
@@ -200,7 +204,7 @@ export default function Contact() {
             <input
               type="checkbox"
               id="consent"
-              name="Consent"
+              name="consent"
               required
               className="mt-1"
               aria-describedby="consent-desc"

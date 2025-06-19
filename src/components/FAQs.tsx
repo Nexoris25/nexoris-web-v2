@@ -1,11 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { faqs } from '@/data/faqs';
 
 export default function FaqsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -15,7 +20,7 @@ export default function FaqsSection() {
     <section
       id="faqs"
       aria-labelledby="faqs-heading"
-      className="py-8 px-6 sm:px-10 lg:px-20bg-gradient-to-br from-[#f6f4ff] to-white"
+      className="py-8 px-6 sm:px-10 lg:px-20 bg-gradient-to-br from-[#f6f4ff] to-white"
     >
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-10">
@@ -42,7 +47,7 @@ export default function FaqsSection() {
                   {faq.question}
                   <FaChevronDown
                     className={`transition-transform duration-300 ${
-                      openIndex === index ? 'rotate-180' : ''
+                      openIndex === index && hasMounted ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
@@ -50,7 +55,7 @@ export default function FaqsSection() {
               <dd
                 id={`faq-answer-${index}`}
                 className={`px-5 pb-5 pt-0 text-base text-[var(--color-dark-alt)] mt-2 transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'block' : 'hidden'
+                  openIndex === index && hasMounted ? 'block' : 'hidden'
                 }`}
               >
                 {faq.answer}
