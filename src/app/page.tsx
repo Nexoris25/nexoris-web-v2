@@ -15,7 +15,7 @@ import { Metadata } from 'next';
 import { generateNexorisStructuredData } from '@/lib/schema/generateSchema';
 import { faqs } from '@/data/faqs'; 
 
-export const dynamic = 'auto';
+export const dynamic = "force-dynamic";
 
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const dynamic = 'auto';
+export const dynamic = "force-dynamic";
 
 
 const title = 'Privacy Policy – Nexoris Technologies';
