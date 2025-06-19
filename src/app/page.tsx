@@ -1,10 +1,14 @@
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
-import OurProcess from '@/components/Process';
-import FaqsSection from '@/components/FAQs';
+import { lazyWithRetry } from '@/utils/lazyWithRetry';
+import React, { Suspense } from 'react';
+
+// Lazily load components with retry logic to fix ChunkLoadError
+const Hero = lazyWithRetry(() => import('@/components/Hero'));
+const About = lazyWithRetry(() => import('@/components/About'));
+const Services = lazyWithRetry(() => import('@/components/Services'));
+const Testimonials = lazyWithRetry(() => import('@/components/Testimonials'));
+const Contact = lazyWithRetry(() => import('@/components/Contact'));
+const OurProcess = lazyWithRetry(() => import('@/components/Process'));
+const FaqsSection = lazyWithRetry(() => import('@/components/FAQs'));
 
 import Script from 'next/script';
 import { Metadata } from 'next';
@@ -80,13 +84,34 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <Hero />
-      <About />
-      <Services />
-      <OurProcess />
-      <Testimonials />
-      <Contact />
-      <FaqsSection />
+      <Suspense fallback={null}>
+  <Hero />
+</Suspense>
+
+<Suspense fallback={null}>
+  <About />
+</Suspense>
+
+<Suspense fallback={null}>
+  <Services />
+</Suspense>
+
+<Suspense fallback={null}>
+  <OurProcess />
+</Suspense>
+
+<Suspense fallback={null}>
+  <Testimonials />
+</Suspense>
+
+<Suspense fallback={null}>
+  <Contact />
+</Suspense>
+
+<Suspense fallback={null}>
+  <FaqsSection />
+</Suspense>
+
     </main>
   );
 }
