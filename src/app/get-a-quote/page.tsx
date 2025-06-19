@@ -5,7 +5,6 @@ import GetAQuoteClient from './GetAQuoteClient';
 export const dynamic = "force-dynamic";
 
 
-
 // Separate constants to ensure proper string typing
 const pageTitle = 'Request a Quote – Nexoris Technologies';
 const pageDescription =
