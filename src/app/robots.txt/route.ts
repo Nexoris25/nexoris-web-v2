@@ -3,27 +3,31 @@ import { NextResponse } from 'next/server';
 export function GET() {
   const body = `
 User-agent: *
-Disallow: /?_task=login
+
+# Block Roundcube and webmail-related routes
+Disallow: /roundcube/
 Disallow: /webmail
-Disallow: /roundcube
 Disallow: /mail
+
+# Block admin and login areas
 Disallow: /admin
 Disallow: /login
-Disallow: /?*
-Disallow: /$
-Disallow: /navbar-logo-webp
-Disallow: /favicon.ico
-Disallow: /sitemap.xml.gz
-Disallow: /robots.txt
-Disallow: /manifest.json
+
+# Block internal framework and API routes
 Disallow: /api/
-Disallow: /404
-Disallow: /500
 Disallow: /_next/
 Disallow: /server/
-Disallow: /*.ts$
-Disallow: /*.tsx$
 
+# Optional: Block error pages if they expose sensitive output
+# Disallow: /404
+# Disallow: /500
+
+# Do NOT block favicon, manifest, or sitemap
+Allow: /
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /favicon.ico
+Allow: /manifest.json
 
 Sitemap: https://www.nexoristech.com/sitemap.xml
 `;

@@ -20,8 +20,8 @@ export default function Hero() {
             id="hero-heading"
             className="text-4xl md:text-5xl font-kanit font-bold leading-tight mb-6 text-[var(--color-primary)]"
           >
-            You Dream It.<br className="hidden md:block" />
-            We Build It Right.<br className="hidden md:block" />
+            You Dream It. <br />
+            We Build It Right. <br/>
             From Day One.
           </h1>
           <p className="text-lg md:text-xl font-rajdhani mb-8 max-w-xl mx-auto lg:mx-0 text-[var(--primary-gray)]">
